@@ -61,7 +61,9 @@ Reflect on what you’ve done so far. How’s it going? Are you feeling behind/a
 What has surprised you so far? Describe your general feelings. Be honest with yourself; this section is for you, not me.
 
 ```
-    **Replace this text with your reflection
+    I'm feeling a little behind. I'm trying to make peace with the fact that everyone goes into lots of things in the 
+    dark while coding. I'm worried about learning a lot of new things, but also excited to be able to make a functional 
+    thing.
 ```
 
 ---
