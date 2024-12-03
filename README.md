@@ -17,7 +17,11 @@ and describe how you integrated the ideas or code into your program. This includ
 helped you, AI tools you've used, and any other resources that are not solely your own contribution. Update as you go.
 
 1. Chat with ChatGPT about CRC cards - https://docs.google.com/document/d/1qAzLseg5_IBE72tHyf0sCF41oJxCDOgJFVrMYBk6vt4/edit?usp=sharing
-
+2. Talked to Nicholas - helped with understanding and conceptualizing and the frontend and backend and choosing 
+   technologies. Helped point to video resources that explain the creation of a website with python, flask, and sqlite3.
+   - https://www.youtube.com/watch?v=m9hUC-WRclU
+   - https://youtu.be/c8yHTlrs9EA?si=xZ_JCuMyqw1driLh
+3. 
 ---
 
 ## Milestone 1: Setup, Planning, Design
@@ -38,9 +42,9 @@ and learn about the difficulty and hike duration.`
     README. You can do this by saving an image in the repository and linking to it. See the sample CRC card below - 
     and REPLACE it with your own:
 
-![Trail Image](image/trail.png)
-![TrailImages Image](image/trailimage.png)
-![Trail Manager CRC](image/trailmanager.png)
+![Trail Image](documentation/trail.png)
+![TrailImages Image](documentation/trailimage.png)
+![Trail Manager CRC](documentation/trailmanager.png)
 
 **Branches**: This project will **require** effective use of git. 
 
