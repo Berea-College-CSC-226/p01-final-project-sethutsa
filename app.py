@@ -22,7 +22,5 @@ def trail_page(trail_name):
     return render_template('trail.html', trail=trail)
 
 
-
-
 if __name__=='__main__':
     app.run(debug=True)
