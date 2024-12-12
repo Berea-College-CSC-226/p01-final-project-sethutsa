@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ trail.name }}</title>
+</head>
+<body>
+    <h1>{{ trail.name }}</h1>
+
+    <!-- Link back to the Home page -->
+    <a href="{{ url_for('home') }}"><button>Home</button></a>
+
+    <!-- Trail Information Section (TODO: Populate from database) -->
+    <p><strong>Length:</strong> {{ trail.length }} miles</p>
+    <p><strong>Elevation:</strong> {{ trail.elevation }} feet</p>
+    <p><strong>Difficulty:</strong> {{ trail.difficulty }}</p>
+
+    <!-- Difficulty Rating Feature -->
+    <form action="#" method="post">
+        <label for="difficulty-rating">Rate Difficulty (1, 2, 3):</label>
+        <select id="difficulty-rating" name="difficulty">
+            <option value="1">1 - Easy</option>
+            <option value="2">2 - Moderate</option>
+            <option value="3">3 - Hard</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+    <p><strong>Average Rating:</strong> TODO</p>
+
+
+</body>
+</html>
