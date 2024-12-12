@@ -14,13 +14,15 @@ def home():
 
 @app.route('/<trail_name>')
 def trail_page(trail_name):
-    print(f"Trail name received: {trail_name}")
     trail = Trail.get_trail_by_name(trail_name)
     if not trail:
         print("Trail not found in database")
         return "Trail not found", 404
-    print(f"Trail details: {trail.__dict__}")
+
     return render_template('trail.html', trail=trail)
+
+
+
 
 if __name__=='__main__':
     app.run(debug=True)
