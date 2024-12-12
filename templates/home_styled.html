@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Home - Pinnacles Navigator</title>
     <style>
         /* Set a natural background color and default font for the entire page */
         body {
@@ -69,24 +67,19 @@
 <body>
     <h1>Welcome to the Pinnacles Navigator!</h1>
 
-<img align="middle" src="https://forestryoutreach.berea.edu/wp-content/uploads/2023/10/NEW-Pinnacles-Trail-Map-9x12-082923-1-2048x1536.png"
-     alt="Trail Map" width="512" height="384">
+    <img align="middle" src="https://forestryoutreach.berea.edu/wp-content/uploads/2023/10/NEW-Pinnacles-Trail-Map-9x12-082923-1-2048x1536.png" alt="Trail Map" width="512" height="384">
+    <div class="external-links">
+        <a href="https://forestryoutreach.berea.edu/"><button>Forestry Outreach Center Website</button></a>
+        <a href="https://www.inaturalist.org/observations?place_id=124929&quality_grade=research&verifiable=any"><button>iNaturalist: FOC</button></a>
+    </div>
 
-<br>
-<div class="external-links">
-    <a href="https://forestryoutreach.berea.edu/"> <button>Forestry Outreach Center Website</button></a>
-    <a href="https://www.inaturalist.org/observations?place_id=124929&quality_grade=research&verifiable=any">
-    <button>iNaturalist: FOC</button></a>
-</div>
-
-<div class="button-container">
-    {% for trail in trail %}
-            <a href="{{ url_for('trail_page', trail_name=trail.name) }}">
-                <button>{{ trail.name }}</button>
-            </a>
-    {% endfor %}
-</div>
-
-
+    <div class="button-container">
+        <a href="{{ url_for('trail_page', trail_name='Trail1') }}"><button>Bluegrass Overlook</button></a>
+        <a href="{{ url_for('trail_page', trail_name='Trail2') }}"><button>East Pinnacle</button></a>
+        <a href="{{ url_for('trail_page', trail_name='Trail3') }}"><button>West Pinnacle</button></a>
+        <a href="{{ url_for('trail_page', trail_name='Trail4') }}"><button>Eagle's Nest</button></a>
+        <a href="{{ url_for('trail_page', trail_name='Trail5') }}"><button>Buzzard's Roost</button></a>
+        <a href="{{ url_for('trail_page', trail_name='Trail6') }}"><button>Basin Mountain</button></a>
+    </div>
 </body>
 </html>
