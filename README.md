@@ -76,14 +76,17 @@ What has surprised you so far? Describe your general feelings. Be honest with yo
 
 Indicate what percentage of the project you have left to complete and how confident you feel. 
 
-❗️**Completion Percentage**: `0 - 100%`
+**Completion Percentage**: `90%`  
 
-❗️**Confidence**: Describe how confident you feel about completing this project, and why. Then, describe some 
+**Confidence**: Describe how confident you feel about completing this project, and why. Then, describe some 
   strategies you can employ to increase the likelihood that you'll be successful in completing this project 
   before the deadline.
 
 ```
-    **Replace this text with your reflection
+I feel a lot more confident now. I have a few features I want to add to create more functionality in the
+website and use the database for holding difficulty ratings to calculate an average difficulty rating. However, in 
+retrospect, the hardest part was knowing where to look and understanding how to connect the frontend and backend using 
+flask logic.
 ```
 
 ---
