@@ -51,6 +51,10 @@ print("connected to database successfully")
 #     """, basin_mountain)
 # print("New row added successfully.")
 
+#had to change the names again because the url for query wouldn't work because of the apostrophe
+cursor = conn.cursor()
+cursor.execute("UPDATE trails SET name = ? WHERE rowid = ?", ("Eagle’s Nest", 4))
+cursor.execute("UPDATE trails SET name = ? WHERE rowid = ?", ("Buzzard’s Roost", 5))
 conn.commit()
 
 conn.close()
