@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Pinnacles Navigator</title>
+</head>
+<body>
+    <h1>Welcome to the Pinnacles Navigator!</h1>
+
+<img align="middle" src="https://forestryoutreach.berea.edu/wp-content/uploads/2023/10/NEW-Pinnacles-Trail-Map-9x12-082923-1-2048x1536.png"
+     alt="Trail Map" width="512" height="384">
+
+<br>
+
+<a href="https://forestryoutreach.berea.edu/"> <button>Forestry Outreach Center Website</button></a>
+<a href="https://www.inaturalist.org/observations?place_id=124929&quality_grade=research&verifiable=any">
+    <button>iNaturalist: FOC</button></a>
+
+{% for trail in trail %}
+        <a href="{{ url_for('trail_page', trail_name=trail.name) }}">
+            <button>{{ trail.name }}</button>
+        </a>
+{% endfor %}
+
+
+</body>
+</html>
