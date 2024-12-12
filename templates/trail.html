@@ -10,12 +10,110 @@
     <!-- Link back to the Home page -->
     <a href="{{ url_for('home') }}"><button>Home</button></a>
 
-    <!-- Trail Information Section (TODO: Populate from database) -->
+    <!-- Trail Information Section -->
     <p><strong>Length:</strong> {{ trail.length }} miles</p>
     <p><strong>Elevation:</strong> {{ trail.elevation }} feet</p>
-    <p><strong>Difficulty:</strong> {{ trail.difficulty }}</p>
+    <p><strong>Difficulty:</strong> {{ trail.difficulty }} (out of 3)</p>
+
+    {% if trail.name =='Bluegrass Overlook' %}
+        <p>View from {{trail.name}}</p>
+        <img src='/static/images/BGO.jpg' alt="View" width="480" height="270">
+        <p>Critters at {{trail.name}}</p>
+        <img src='/static/images/1.jpg' alt="View" width="480" height="270">
+        <p> Connecting Trails </p>
+        <a href="{{ url_for('trail_page', trail_name='East Pinnacle') }}">
+                <button>East Pinnacle</button>
+        </a>
+        <a href="{{ url_for('trail_page', trail_name='West Pinnacle') }}">
+                <button>West Pinnacle</button>
+        </a>
+        <a href="{{ url_for('trail_page', trail_name='Eagle’s Nest') }}">
+                <button>Eagle's Nest</button>
+        </a>
+        <a href="{{ url_for('trail_page', trail_name='Buzzard’s Roost') }}">
+                <button>Buzzard's Roost</button>
+        </a>
+
+    {% elif trail.name =='East Pinnacle' %}
+        <p>View from {{trail.name}}</p>
+        <img src='/static/images/EP.jpg' alt="View" width="480" height="270">
+        <p>Critters at {{trail.name}}</p>
+        <img src='/static/images/2.jpg' alt="View" width="480" height="270">
+        <p> Connecting Trails </p>
+        <a href="{{ url_for('trail_page', trail_name='Bluegrass Overlook') }}">
+                <button>Bluegrass Overlook</button>
+        </a>
+        <a href="{{ url_for('trail_page', trail_name='Eagle’s Nest') }}">
+                <button>Eagle's Nest</button>
+        </a>
+        <a href="{{ url_for('trail_page', trail_name='Buzzard’s Roost') }}">
+                <button>Buzzard's Roost</button>
+        </a>
+
+    {% elif trail.name =='West Pinnacle' %}
+        <p>View from {{trail.name}}</p>
+        <img src='/static/images/WP.jpg' alt="View" width="480" height="270">
+        <p>Critters at {{trail.name}}</p>
+        <img src='/static/images/3.jpg' alt="View" width="480" height="270">
+        <p> Connecting Trails </p>
+        <a href="{{ url_for('trail_page', trail_name='Bluegrass Overlook') }}">
+                <button>Bluegrass Overlook</button>
+        </a>
+
+    {% elif trail.name =='Eagle’s Nest' %}
+        <p>View from {{trail.name}}</p>
+        <img src='/static/images/EN.jpg' alt="View" width="480" height="270">
+        <p>Critters at {{trail.name}}</p>
+        <img src='/static/images/4.jpg' alt="View" width="480" height="270">
+        <p> Connecting Trails </p>
+        <a href="{{ url_for('trail_page', trail_name='Buzzard’s Roost') }}">
+                <button>Buzzard's Roost</button>
+        </a>
+        <a href="{{ url_for('trail_page', trail_name='East Pinnacle') }}">
+                <button>East Pinnacle</button>
+        </a>
+        <a href="{{ url_for('trail_page', trail_name='Bluegrass Overlook') }}">
+                <button>Bluegrass Overlook</button>
+        </a>
+        <a href="{{ url_for('trail_page', trail_name='Basin Mountain') }}">
+                <button>Basin Mountain</button>
+        </a>
+
+    {% elif trail.name =='Buzzard’s Roost' %}
+        <p>View from {{trail.name}}</p>
+        <img src='/static/images/BR.jpg' alt="View" width="480" height="270">
+        <p>Critters at {{trail.name}}</p>
+        <img src='/static/images/5.jpg' alt="View" width="480" height="270">
+        <p> Connecting Trails </p>
+        <a href="{{ url_for('trail_page', trail_name='Eagle’s Nest') }}">
+                <button>Eagle's Nest</button>
+        </a>
+        <a href="{{ url_for('trail_page', trail_name='East Pinnacle') }}">
+                <button>East Pinnacle</button>
+        </a>
+        <a href="{{ url_for('trail_page', trail_name='Bluegrass Overlook') }}">
+                <button>Bluegrass Overlook</button>
+        </a>
+        <a href="{{ url_for('trail_page', trail_name='Basin Mountain') }}">
+                <button>Basin Mountain</button>
+        </a>
+
+    {% elif trail.name =='Basin Mountain' %}
+        <p>View from {{trail.name}}</p>
+        <img src='/static/images/BM.jpg' alt="View" width="480" height="270">
+        <p>Critters at {{trail.name}}</p>
+        <img src='/static/images/6.jpg' alt="View" width="480" height="270">
+        <p> Connecting Trails </p>
+        <a href="{{ url_for('trail_page', trail_name='Eagle’s Nest') }}">
+                <button>Eagle's Nest</button>
+        </a>
+        <a href="{{ url_for('trail_page', trail_name='Buzzard’s Roost') }}">
+                <button>Buzzard's Roost</button>
+        </a>
+    {% endif %}
 
     <!-- Difficulty Rating Feature -->
+    <p><strong>Average Rating:</strong></p>
     <form action="#" method="post">
         <label for="difficulty-rating">Rate Difficulty (1, 2, 3):</label>
         <select id="difficulty-rating" name="difficulty">
@@ -25,7 +123,6 @@
         </select>
         <button type="submit">Submit</button>
     </form>
-    <p><strong>Average Rating:</strong> TODO</p>
 
 
 </body>
