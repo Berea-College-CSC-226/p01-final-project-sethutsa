@@ -38,7 +38,20 @@ print("connected to database successfully")
 #             WHERE name = ?;
 #             ''', [(row[1], row[0]) for row in new_data])
 #
-# conn.commit()
+# cursor.execute("UPDATE trails SET name = ? WHERE rowid = ?", ("Eagle's Nest", 4))
+# cursor.execute("UPDATE trails SET name = ? WHERE rowid = ?", ("Buzzard's Roost", 5))
+
+# cursor = conn.cursor()
 #
-# conn.close()
-# print("Connection closed")
+# basin_mountain = ('Basin Mountain', 2.8, 1437, 3)
+#
+# cursor.execute("""
+#         INSERT INTO trails (name, length, elevation, difficulty)
+#         VALUES (?, ?, ?, ?);
+#     """, basin_mountain)
+# print("New row added successfully.")
+
+conn.commit()
+
+conn.close()
+print("Connection closed")
