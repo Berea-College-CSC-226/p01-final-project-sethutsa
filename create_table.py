@@ -1,3 +1,19 @@
+######################################################################
+# Author: Utsa Seth
+# Username: sethutsa
+#
+# Assignment: p01-final-project
+#
+# Purpose: Create a database using sqlite3
+#
+######################################################################
+# Acknowledgements:
+# Check references in README.md
+#
+# licensed under a Creative Commons
+# Attribution-Noncommercial-Share Alike 3.0 United States License.
+####################################################################################
+
 import sqlite3
 
 conn = sqlite3.connect('database.db')
