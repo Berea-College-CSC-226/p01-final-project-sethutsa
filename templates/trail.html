@@ -1,0 +1,241 @@
+<!--######################################################################-->
+<!--# Author: Utsa Seth-->
+<!--# Username: sethutsa-->
+<!--#-->
+<!--# Assignment: p01-final-project-->
+<!--#-->
+<!--# Purpose: Make a html page for the home page of my website-->
+<!--#-->
+<!--######################################################################-->
+<!--# Acknowledgements:-->
+<!--# Check references in README.md-->
+<!--#-->
+<!--# licensed under a Creative Commons-->
+<!--# Attribution-Noncommercial-Share Alike 3.0 United States License.-->
+<!--####################################################################################-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ trail.name }}</title>
+    <style>
+        /* Base styles matching home page */
+        body {
+            background-color: #f4f1de;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Header and navigation */
+        h1 {
+            color: #3d405b;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Trail information section */
+        .trail-info {
+            background-color: #81b29a;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .trail-info p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        /* Image container for side-by-side layout */
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .image-section {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-section p {
+            color: #3d405b;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Bottom section container */
+        .bottom-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        /* Connecting trails section */
+        .connecting-trails {
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Rating widget section */
+        .rating-widget {
+            flex: 1;
+            padding: 20px;
+            background-color: #e07a5f;
+            border-radius: 10px;
+            color: white;
+        }
+
+        /* Button styles matching home page */
+        button {
+            background-color: #81b29a;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #3d405b;
+            transform: translateY(-2px);
+        }
+
+        /* Home button specific style */
+        .home-button button {
+            background-color: #e07a5f;
+            margin-bottom: 20px;
+        }
+
+        .home-button button:hover {
+            background-color: #bc4b3c
+        }
+
+        /* Rating form styles */
+        select {
+            padding: 8px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="home-button">
+        <a href="{{ url_for('home') }}"><button>Home</button></a>
+    </div>
+
+    <h1>{{ trail.name }}</h1>
+
+    <!-- Trail Information Section -->
+    <div class="trail-info">
+        <p><strong>Length:</strong> {{ trail.length }} miles</p>
+        <p><strong>Elevation:</strong> {{ trail.elevation }} feet</p>
+        <p><strong>Difficulty:</strong> {{ trail.difficulty }} (out of 3)</p>
+    </div>
+
+    <!-- Bottom Container -->
+<div class="bottom-container">
+    <!-- Connecting Trails Section -->
+    <div class="connecting-trails">
+        <p><strong>Connecting Trails</strong></p>
+        {% if trail.name == 'Bluegrass Overlook' %}
+            <a href="{{ url_for('trail_page', trail_name='East Pinnacle') }}"><button>East Pinnacle</button></a>
+            <a href="{{ url_for('trail_page', trail_name='West Pinnacle') }}"><button>West Pinnacle</button></a>
+            <a href="{{ url_for('trail_page', trail_name='Eagle’s Nest') }}"><button>Eagle’s Nest</button></a>
+            <a href="{{ url_for('trail_page', trail_name='Buzzard’s Roost') }}"><button>Buzzard’s Roost</button></a>
+        {% elif trail.name == 'East Pinnacle' %}
+            <a href="{{ url_for('trail_page', trail_name='Bluegrass Overlook') }}"><button>Bluegrass Overlook</button></a>
+            <a href="{{ url_for('trail_page', trail_name='Eagle’s Nest') }}"><button>Eagle’s Nest</button></a>
+            <a href="{{ url_for('trail_page', trail_name='Buzzard’s Roost') }}"><button>Buzzard’s Roost</button></a>
+        {% elif trail.name == 'West Pinnacle' %}
+            <a href="{{ url_for('trail_page', trail_name='Bluegrass Overlook') }}"><button>Bluegrass Overlook</button></a>
+        {% elif trail.name == 'Eagle’s Nest' %}
+            <a href="{{ url_for('trail_page', trail_name='Buzzard’s Roost') }}"><button>Buzzard’s Roost</button></a>
+            <a href="{{ url_for('trail_page', trail_name='East Pinnacle') }}"><button>East Pinnacle</button></a>
+            <a href="{{ url_for('trail_page', trail_name='Bluegrass Overlook') }}"><button>Bluegrass Overlook</button></a>
+            <a href="{{ url_for('trail_page', trail_name='Basin Mountain') }}"><button>Basin Mountain</button></a>
+        {% elif trail.name == 'Buzzard’s Roost' %}
+            <a href="{{ url_for('trail_page', trail_name='Eagle’s Nest') }}"><button>Eagle’s Nest</button></a>
+            <a href="{{ url_for('trail_page', trail_name='East Pinnacle') }}"><button>East Pinnacle</button></a>
+            <a href="{{ url_for('trail_page', trail_name='Bluegrass Overlook') }}"><button>Bluegrass Overlook</button></a>
+            <a href="{{ url_for('trail_page', trail_name='Basin Mountain') }}"><button>Basin Mountain</button></a>
+        {% elif trail.name == 'Basin Mountain' %}
+            <a href="{{ url_for('trail_page', trail_name='Eagle’s Nest') }}"><button>Eagle’s Nest</button></a>
+            <a href="{{ url_for('trail_page', trail_name='Buzzard’s Roost') }}"><button>Buzzard’s Roost</button></a>
+        {% endif %}
+    </div>
+
+    <!-- Rating Widget -->
+    <div class="rating-widget">
+        <p><strong>Average Rating:</strong></p>
+        <form>
+            <label for="difficulty-rating">Rate Difficulty (1, 2, 3):</label>
+            <select id="difficulty-rating" name="difficulty">
+                <option value="1">1 - Easy</option>
+                <option value="2">2 - Moderate</option>
+                <option value="3">3 - Hard</option>
+            </select>
+            <button>Submit</button>
+        </form>
+    </div>
+</div>
+
+    <!-- Images Section -->
+<div class="image-container">
+    <div class="image-section">
+        <p>View from {{trail.name}}</p>
+        {% if trail.name == 'Bluegrass Overlook' %}
+            <img src='/static/images/BGO.jpg' alt="View">
+        {% elif trail.name == 'East Pinnacle' %}
+            <img src='/static/images/EP.jpg' alt="View">
+        {% elif trail.name == 'West Pinnacle' %}
+            <img src='/static/images/WP.jpg' alt="View">
+        {% elif trail.name == 'Eagle’s Nest' %}
+            <img src='/static/images/EN.jpg' alt="View">
+        {% elif trail.name == 'Buzzard’s Roost' %}
+            <img src='/static/images/BR.jpg' alt="View">
+        {% elif trail.name == 'Basin Mountain' %}
+            <img src='/static/images/BM.jpg' alt="View">
+        {% endif %}
+    </div>
+    <div class="image-section">
+        <p>Critters at {{trail.name}}</p>
+        {% if trail.name == 'Bluegrass Overlook' %}
+            <img src='/static/images/1.jpg' alt="Critters">
+        {% elif trail.name == 'East Pinnacle' %}
+            <img src='/static/images/2.jpg' alt="Critters">
+        {% elif trail.name == 'West Pinnacle' %}
+            <img src='/static/images/3.jpg' alt="Critters">
+        {% elif trail.name == 'Eagle’s Nest' %}
+            <img src='/static/images/4.jpg' alt="Critters">
+        {% elif trail.name == 'Buzzard’s Roost' %}
+            <img src='/static/images/5.jpg' alt="Critters">
+        {% elif trail.name == 'Basin Mountain' %}
+            <img src='/static/images/6.jpg' alt="Critters">
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>
